@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Shopping</title>
+  <link rel="stylesheet" href="basic style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <h1>ShopOnline</h1>
+    </div>
+    <div class="auth">
+      <button id="loginBtn" onclick="toggleLoginForm()">Login</button>
+      <button id="cartBtn" onclick="toggleCart()">Cart (0)</button>
+    </div>
+  </header>
+
+  <!-- Product Gallery -->
+  <section id="product-gallery">
+    <h1>Our Products</h1>
+    <div class="product">
+      <img src="product1.jpg" alt="Product 1">
+      <h3>Product 1</h3>
+      <p>$10</p>
+      <button onclick="addToCart(1, 'Product 1', 10)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="product2.jpg" alt="Product 2">
+      <h3>Product 2</h3>
+      <p>$20</p>
+      <button onclick="addToCart(2, 'Product 2', 20)">Add to Cart</button>
+    </div>
+    <!-- Add more products as needed -->
+  </section>
+
+  <!-- Login Form -->
+  <div id="loginForm" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="toggleLoginForm()">&times;</span>
+      <h3>Login</h3>
+      <form id="loginFormDetails" onsubmit="loginUser(event)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Modal -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="toggleCart()">&times;</span>
+      <h3>Your Cart</h3>
+      <ul id="cartItems">
+        <!-- Cart items will be dynamically added here -->
+      </ul>
+      <p>Total: $<span id="cartTotal">0</span></p>
+      <button onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
